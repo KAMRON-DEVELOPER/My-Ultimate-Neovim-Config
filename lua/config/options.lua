@@ -1,12 +1,30 @@
 local opt = vim.opt
 
 opt.fillchars = { eob = " " }
+
+-- Set leader key to space
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- enable mouse mode
 opt.mouse = "a"
+
+-- show numbres
 vim.wo.number = true
-opt.clipboard = "unnamedplus"
 
 -- no swapfile
 vim.opt.swapfile = false
+
+-- disable text wrap
+opt.wrap = false
+
+-- system clipboard
+opt.clipboard = "unnamedplus"
+
+
+-- enable ignorecase + smartcase for better searching
+opt.ignorecase = true
+opt.smartcase = true
 
 -- tabs & indentation
 opt.tabstop = 2
@@ -16,23 +34,14 @@ opt.expandtab = true
 opt.smarttab = true
 opt.smartindent = true
 
--- show search highlight only search mode and  live search
--- vim.opt.hlsearch = false
--- vim.opt.incsearch = true
+-- better splitting
+opt.splitbelow = true
+opt.splitright = true
 
--- always split to bottom or right
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-
--- auto scroll
--- vim.opt.scrolloff = 5
-
--- line wrapping
-opt.wrap = false
-
--- theme and iterm2 settings
+-- enable 24-bit color
 opt.termguicolors = true
-opt.background = "dark"
+
+-- enable the sign column to prevent the screen from jumping
 opt.signcolumn = "yes"
 
 -- backspace

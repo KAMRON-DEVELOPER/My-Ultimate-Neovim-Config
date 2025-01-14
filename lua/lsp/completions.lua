@@ -54,7 +54,22 @@ return {
       local conform = require("conform")
 
       lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.pyright.setup({ capabilities = capabilities })
+      lspconfig.pyright.setup({
+        capabilities = capabilities,
+        on_init = function(client)
+          local cwd = vim.fn.getcwd()
+          local venv_path = cwd .. "/.venv/bin/python"
+
+          if vim.fn.executable(venv_path) == 1 then
+            client.config.settings.python = { pythonPath = venv_path }
+          else
+            client.config.settings.python = { pythonPath = vim.fn.exepath("python3") }
+          end
+
+          client.notify("workspace/didChangeConfiguration")
+          return true
+        end,
+      })
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
       -- lspconfig.gopls.setup({ capabilities = capabilities })
       -- lspconfig.ts_ls.setup({ capabilities = capabilities })

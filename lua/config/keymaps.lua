@@ -1,16 +1,8 @@
 local keymap = vim.keymap
 
--- set leader key
-vim.g.mapleader = " "
-
 -- save and quite
 keymap.set("n", "<leader>w", "<CMD>write<CR>", { desc = "save buffer" })
 keymap.set("n", "<leader>q", "<CMD>quit<CR>", { desc = "close buffer" })
-
--- source current file
-vim.keymap.set("n", "<leader><leader>", function()
-	vim.cmd("so")
-end, { desc = "Source file" })
 
 -- select all
 vim.keymap.set("n", "==", "gg<S-v>G", { desc = "Select all" })

@@ -1,6 +1,6 @@
 # 🚀 MY ULTIMATE NEOVIM SETUP 🚀
 
-### ⭐ NAVIGATION ⭐
+## ⭐ NAVIGATION ⭐
 
 | Mode | Key        | Action                          |
 | ---- | ---------- | ------------------------------- |
@@ -21,6 +21,13 @@
 | (n)  | `Ctrl + d` | Move down half page             |
 | (n)  | `Ctrl + b` | Move one page up                |
 | (n)  | `Ctrl + f` | Move one page down              |
+| (n)  | `zf`       | Create a fold                   |
+| (n)  | `zd`       | Delete a fold                   |
+| (n)  | `zo`       | Open a fold                     |
+| (n)  | `zc`       | Close a fold                    |
+| (n)  | `zC`       | Close all folds under cursor    |
+| (n)  | `zr`       | Reduce folding level            |
+| (n)  | `zm`       | Increase folding level          |
 
 ## ⭐ EDITING ⭐
 
@@ -52,23 +59,23 @@
 | (v)  | `p` | Paste               |
 | (v)  | `P` | Paste before cursor |
 
-
 ## 📦 PLUGINS CONFIGURATION 📦
 
 ### ⚙️ nvim-treesitter
+
 | Mode | Key            | Action                |
 | ---- | -------------- | --------------------- |
 | (v)  | `Ctrl + Space` | Incremental selection |
 | (v)  | `Backspace`    | Decremental selection |
 
-
 ### ⚙️ vim-maximizer
+
 | Mode | Key        | Action                         |
 | ---- | ---------- | ------------------------------ |
 | (n)  | `Ctrl + M` | Maximize/minimize split window |
 
-
 ### ⚙️ mason, mason-lspconfig, nvim-lspconfig
+
 | Mode | Key           | Action                      |
 | ---- | ------------- | --------------------------- |
 | (n)  | `Leader + ch` | Show code hover information |
@@ -76,8 +83,8 @@
 | (n)  | `Leader + cr` | Show code references        |
 | (n)  | `Leader + ca` | Show code actions           |
 
-
 ### ⚙️ nvim-surround
+
 | Mode | Key                     | Action                           |
 | ---- | ----------------------- | -------------------------------- |
 | (n)  | `ysiw + character`      | Surround word with a character   |
@@ -86,19 +93,16 @@
 | (n)  | `cs + character`        | Change surrounding character     |
 | (n)  | `cs + character + text` | Change surrounding with new text |
 
-#### (official)
-|    Old text                 |   Command      |   New text                |  
-| --------------------------- | -------------- | ------------------------- |
-|    surr*ound_words          |   ysiw)        |   (surround_words)        |
-|    *make strings            |   ys$"         |   "make strings"          |
-|    [delete ar*ound me!]     |   ds]          |   delete around me!       |
-|    remove <b>HTML t*ags</b> |   dst          |   remove HTML tags        |
-|    'change quot*es'         |   cs'"         |   "change quotes"         |
-|    <b>or tag* types</b>     |   csth1<CR>    |   <h1>or tag types</h1>   | 
-|    delete(functi*on calls)  |   dsf          |   function calls          |
-
+| Example Commands               | Result                          |
+| ------------------------------ | ------------------------------- |
+| `ysi)`                         | (surround text)                |
+| `ys"`                         | "surround text"               |
+| `dst`                          | Delete surrounding tags         |
+| `cs"'`                        | Change quotes                  |
+| `csth1<CR>`                    | Change to `<h1>text</h1>`      |
 
 ### ⚙️ vim-fugitive
+
 | Mode | Key            | Action                      |
 | ---- | -------------- | --------------------------- |
 | (n)  | `Leader + gs`  | Open Git status window      |
@@ -117,26 +121,23 @@
 | `=` : View file differences             |
 | `ZZ` : Save and exit the commit message |
 
-
-
 ### ⚙️ flutter-tools
-* FlutterRun - Run the current project. Respects config.debugger.enabled setting.
-* FlutterDebug - Force run current project in debug mode.
-* FlutterDevices - Brings up a list of connected devices to select from.
-* FlutterEmulators - Similar to devices but shows a list of emulators to choose from.
-* FlutterReload - Reload the running project.
-* FlutterRestart - Restart the current project.
-* FlutterQuit - Ends a running session.
-* FlutterAttach - Attach to a running app.
-* FlutterDetach - Ends a running session locally but keeps the process running on the device.
-* FlutterOutlineToggle - Toggle the outline window showing the widget tree for the given file.
-* FlutterOutlineOpen - Opens an outline window showing the widget tree for the given file.
-* FlutterDevTools - Starts a Dart Dev Tools server.
-* FlutterDevToolsActivate - Activates a Dart Dev Tools server.
-* FlutterCopyProfilerUrl - Copies the profiler url to your system clipboard (+ register). Note that commands FlutterRun and FlutterDevTools must be executed first.
-* FlutterLspRestart - This command restarts the dart language server, and is intended for situations where it begins to work incorrectly.
-* FlutterSuper - Go to super class, method using custom LSP method dart/textDocument/super.
-* FlutterReanalyze - Forces LSP server reanalyze using custom LSP method dart/reanalyze.
-* FlutterRename - Renames and updates imports if lsp.settings.renameFilesWithClasses == "always"
-* FlutterLogClear - Clears the log buffer.
-* FlutterLogToggle - Toggles the log buffer.
+
+| Command                  | Description                              |
+| ------------------------ | ---------------------------------------- |
+| `FlutterRun`            | Run the current project                  |
+| `FlutterDebug`          | Force debug mode                         |
+| `FlutterDevices`        | List connected devices                   |
+| `FlutterEmulators`      | List available emulators                 |
+| `FlutterReload`         | Reload the running project               |
+| `FlutterRestart`        | Restart the current project              |
+| `FlutterQuit`           | Quit the running session                 |
+| `FlutterAttach`         | Attach to a running app                  |
+| `FlutterDetach`         | Detach from running app                  |
+| `FlutterOutlineToggle`  | Toggle the outline widget tree           |
+| `FlutterDevTools`       | Start Dart Dev Tools server              |
+| `FlutterLspRestart`     | Restart Dart language server             |
+| `FlutterReanalyze`      | Force LSP server reanalysis              |
+| `FlutterRename`         | Rename and update imports                |
+| `FlutterLogClear`       | Clear log buffer                         |
+| `FlutterLogToggle`      | Toggle log buffer                        |

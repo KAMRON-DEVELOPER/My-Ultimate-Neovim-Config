@@ -23,6 +23,7 @@ return {
           { name = "nvim_lsp" }, -- for lsp
           { name = "buffer" },   -- text within current buffer
           { name = "path" },     -- file system paths
+          { name = "render-markdown" }
         }),
 
         window = {

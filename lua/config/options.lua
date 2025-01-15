@@ -2,6 +2,9 @@ local opt = vim.opt
 
 opt.fillchars = { eob = " " }
 
+-- remove background color
+vim.opt.pumblend = 0
+
 -- Set leader key to space
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

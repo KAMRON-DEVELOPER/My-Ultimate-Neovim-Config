@@ -1,5 +1,28 @@
 # 🚀 MY ULTIMATE NEOVIM SETUP 🚀
 
+## ⭐ TMUX ⭐
+******************************** TMUX ***********************************
+$ tmux new -s new-session == create new session
+$ tmux a == attach to last session
+$ tmux a -t session_name == attachin to given session name
+$ tmux ls == show all sessions
+$ shift + </> == change windows
+$ alt + </^/> == change panes
+<prefix> + d == deattach from tmux session
+<prefix> + s == navigate beetween sessions
+<prefix> + w == preview session
+<prefix> + : == type command to navbar
+<prefix> + z == zoom or toggle fullscreen
+<prefix> + {/} == move the current pain to right/left
+<prefix> + ! == take the current pains to new window
+<prefix> + V == split vertically 
+<prefix> + H == split horizontally
+<prefix> + alt + <^> == resize panes
+<prefix> + V == split vertically
+# tmux-resurrect
+prefix + Ctrl-s == save session even kill-server!!!
+prefix + Ctrl-r == restore session even killed server!!!
+
 ## ⭐ NAVIGATION ⭐
 
 | Mode | Key        | Action                          |

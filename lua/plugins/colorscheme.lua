@@ -2,7 +2,11 @@ return {
 	{
 		"zaldih/themery.nvim",
 		lazy = false,
-		dependencies = { "ellisonleao/gruvbox.nvim", "navarasu/onedark.nvim", "folke/tokyonight.nvim" },
+		dependencies = {
+			"ellisonleao/gruvbox.nvim",
+			"navarasu/onedark.nvim",
+			"folke/tokyonight.nvim",
+		},
 
 		config = function()
 			require("themery").setup({
@@ -10,20 +14,11 @@ return {
 				themes = {
 					"onedark",
 					"tokyonight",
-					{
-						name = "Gruvbox dark",
-						colorscheme = "gruvbox",
-						before = [[vim.opt.background = "dark"]],
-					},
-					{
-						name = "Gruvbox light",
-						colorscheme = "gruvbox",
-						before = [[vim.opt.background = "light"]],
-					},
+					"gruvbox",
 				},
 			})
 
-			vim.keymap.set("n", "<leader>tc", ":Themery<CR>", { desc = "Themery" })
+			vim.keymap.set("n", "<leader>th", ":Themery<CR>", { desc = "Themery" })
 		end,
 	},
 	{

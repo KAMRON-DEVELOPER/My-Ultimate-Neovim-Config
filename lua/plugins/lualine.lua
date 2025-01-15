@@ -11,14 +11,14 @@ return {
 
 		lualine.setup({
 			options = {
-				-- theme = "auto",
+				theme = "auto",
 				-- theme = "iceberg_dark",
 				-- theme = "codedark",
 				-- theme = "base16",
 				-- theme = "tokyonight",
 				-- theme = "gruvbox_dark",
 				-- theme = "jellybeans",
-				theme = "dracula",
+				-- theme = "dracula",
 				-- theme = "ayu_mirage",
 				-- theme = "horizon",
 				-- theme = "nord",
@@ -30,18 +30,7 @@ return {
 				-- component_separators = { left = "", right = "" }, -- beetween
 				-- section_separators = { left = "", right = "" }, -- inside
 			},
-			disabled_filetypes = {
-				statusline = {},
-				winbar = {},
-			},
-			ignore_focus = {},
 			always_divide_middle = true,
-			globalstatus = false,
-			refresh = {
-				statusline = 1000,
-				tabline = 1000,
-				winbar = 1000,
-			},
 			sections = {
 				lualine_a = {
 					"mode",
@@ -64,8 +53,6 @@ return {
 				lualine_y = { "filename" },
 				lualine_z = { "location" },
 			},
-			tabline = {},
-			extensions = {},
 		})
 	end,
 }
